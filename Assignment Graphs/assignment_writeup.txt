@@ -1,0 +1,33 @@
+Aiden Hock
+025999803
+CECS 427 Sec 01
+6 Febuary 2024
+
+
+--APPROACH
+This assignment required a python program that utilizes NetworkX and Matplotlib libraries.
+The goal of this assignment is to manage graph operations using an adjacency list format including:
+reading a graph from a file
+writing a graph to a file
+generating a random Erdős-Rényi graph
+computing the shortest path between nodes
+plotting a loaded/created graph
+
+First, I started by installing the necessary libraries.
+Next, I created the menu options to start testing my functions.
+After, I started developing my functionalities.
+Next, I created a node labeling function to help visualize the graphs. 
+Finally, I began testing for edge cases, system failures, and exceptions. 
+
+
+--CHALLENGES 
+The biggest challenge I faced was creating a scalable node labeling generator using letters instead of the default numbers.
+Additionally, testing for edge cases was a tad difficult as it was hard to imagine when the graphing operations might fail.
+Finally, I made sure that the system didnt fail if a menu option was invalid.
+
+As of right now my program can only generate a random Erdős-Rényi graph of 499 nodes. 
+
+
+--ADDITIONAL FEATURES
+I used letters instead of numbers when generating a random Erdős-Rényi graph.
+I incorporated error handling and an interactive menu system.

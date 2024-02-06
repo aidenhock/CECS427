@@ -50,6 +50,7 @@ def write_graph(G, file_name):
 def create_random_graph(n, c):
     """
     Creates an Erdős-Rényi graph with n nodes and probability p calculated using the provided c parameter.
+    Max number of n nodes is 499.
     """
     p = (c * math.log(n)) / n if n > 1 else 0
     G = nx.erdos_renyi_graph(n, p)
