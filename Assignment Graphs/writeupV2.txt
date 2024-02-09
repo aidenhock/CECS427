@@ -1,0 +1,18 @@
+Aiden Hock
+025999803
+CECS 427 Sec 01
+6 Febuary 2024
+
+*Please refer to original lab writeup for my full writeup*
+
+--APPROACH
+Modified original code to only accept integer nodes.
+
+
+--CHALLENGES 
+Misunderstood requirements to use letters instead of integers for nodes.
+Version 2 still can only plot up to 499 nodes. 
+
+
+--ADDITIONAL FEATURES
+Modified first submission so that nodes are can now only be integers. 
