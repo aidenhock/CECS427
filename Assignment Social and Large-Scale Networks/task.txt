@@ -1,0 +1,46 @@
+Extend the program of assignment 1 with the following functionalities (each number is in the menu option): 
+
+Read a Graph: (Assignment 1)
+
+Save the Graph: (Assignment 1)
+
+Create a Graph: (Assignment 2)  Create a submenu with the following options
+
+Random Erdos-Reny Graph (Assignment 1)
+
+Karate-Club Graph (Assignment 2)  See https://networkx.org/documentation/stable/auto_examples/graph/plot_karate_club.html
+Algorithms: (Assignment 1 and 2)  Create a submenu with the following options
+
+Shortest-Path: (Assignment 1)
+Partition G (Assignment 2)
+Param:
+num_components: integer
+
+Remove from G the edges with the highest betweenness until the number of connected components is num_components. This process updates G and the plots
+Plot G: (Assignments 1 and 2)  Create a submenu with the following options. 
+
+The Shortest Path (Assignment 1) : Enable/disable plotting the shortest path
+Cluster Coefficients (Assignment 2) : Enable/disable plotting the cluster coefficient 
+The Cluster coefficient is proportional to its size and color. Let cluster_min, and cluster_max be the min and max cluster coefficients, and let cv be the cluster coefficient of node v and pv = (cv- cluster_min)/(cluster_max - cluster_min) of node v. The size of v and color are proportional to pv.  Let max_pixel and min_pixel be the minimum and maximum pixel sizes of the nodes. Therefore, the node v will have size min_pixel + pv(max_pixel -min_pixel ) and the RGB color is set to (pv 254, 254, 0).
+
+Neighborhood Overlaps (Assignment 2) : Enable/disable plotting the Neighborhood Overlap  
+Use the instructions previously given to highlight edges.
+
+Assign and validate Attributes (Assignment 2)
+Param
+p: float
+
+Homophily.  Assign to each node of G, either red or blue uniformly and independently with probability p and determine if there is evidence of homophily (Assortativity in NetworkX).  Is the test returning a value similar to p? 
+Balanced Graph.  Assign to each edge of G a sign, either + or - uniformly and independently with probability p, and determine if the graph is considered balanced.  Use  dwave_networkxLinks to an external site.  (an extension of Networks to analyze the graphs.)
+   x: Exit
+
+ 
+
+Test your program with various parameters. The assignments are expected to be professionally implemented with no crashes. Handle all possible exceptions accordingly and provide clear comments and documentation for your code, explaining the logic and any important decisions.
+
+Submission Guidelines:
+
+Submit the Python file containing all the requirements.
+Include comments in your code explaining the logic and algorithms used.
+Include a brief report (in a separate text file) describing your approach, challenges faced, and any additional features implemented.
+By tackling these tasks, you'll build more practical programming skills related to graph manipulation in Python. This project aligns with the principles taught in class and encourages you to explore the NetworkX library for efficient graph handling.

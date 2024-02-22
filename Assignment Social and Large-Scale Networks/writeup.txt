@@ -1,0 +1,24 @@
+Aiden Hock
+025999803
+CECS 427 Sec 01
+22 Febuary 2024
+
+
+--APPROACH
+I approched this assignment by first starting with understanding the requirements.
+Next, I built the menu options to extend upon assignment 1 and accomadate assignment 2 functionality.
+After the menu was in working order I began to implement menu operations 3b, 4b, 5b, 5c, 6a,
+and finally 6b in that order. 
+
+
+--CHALLENGES 
+Using the dwave_networkx library was my biggest challenge, particularly with the structural_imbalance function.
+This function required an annealing sampler which was the hardest part of implementation.
+Other challenges included input validation, error handling, and finding time to sleep. 
+
+
+--ADDITIONAL FEATURES
+I decided it was unnecessary and extra work, so I did not implement, but I considered adding a dynamic
+threshold function that would analyze graphs properties and calculate a threshold variable for determining 
+if the assortativity coefficient is similar to the probability p based on the size of the graph and the 
+desired confidence level.
