@@ -16,9 +16,16 @@ Using the dwave_networkx library was my biggest challenge, particularly with the
 This function required an annealing sampler which was the hardest part of implementation.
 Other challenges included input validation, error handling, and finding time to sleep. 
 
+I needed to submit twice in order to handle an edge case where all the nodes are assigned the same color
+in homophily.  
+
 
 --ADDITIONAL FEATURES
 I decided it was unnecessary and extra work, so I did not implement, but I considered adding a dynamic
 threshold function that would analyze graphs properties and calculate a threshold variable for determining 
 if the assortativity coefficient is similar to the probability p based on the size of the graph and the 
-desired confidence level.
+desired confidence level. For now I just left it as a '.1'.
+
+I considered adding additional functionality to visualize the homophily in the plot function, but considering 
+it was not specified in the requirements I found it unnecessary to do so and just left it to return the 
+Assortativity coefficient for homophily.

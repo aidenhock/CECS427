@@ -171,6 +171,11 @@ def assign_homophily(G, p):
     if not (0 <= p <= 1):
         raise ValueError("Probability p must be between 0 and 1.")
     
+    # Handle edge cases where all nodes will have the same color
+    if p in [0, 1]:  
+        print("All nodes will have the same color, making assortativity coefficient undefined.")
+        return G
+    
     # Assign a color to each node based on probability p
     for node in G.nodes():
         G.nodes[node]['color'] = 'red' if random.random() < p else 'blue'
