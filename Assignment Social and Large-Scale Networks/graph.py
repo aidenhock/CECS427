@@ -151,10 +151,11 @@ def plot_graph(G, path=None, plot_shortest_path=True, plot_cluster_coefficient=F
     plt.show()
 
 
-def assign_homophily(G, p):
+def assign_plot_homophily(G, p):
     """
     Assigns a color (either red or blue) to each node in the graph based on probability p
     and calculates the assortativity coefficient to check for homophily.
+    Plots the graph with the assigned node colors.
 
     Parameters:
     G (networkx.Graph): The graph on which to assign colors.
@@ -190,6 +191,13 @@ def assign_homophily(G, p):
     else:
         print("The graph does not show strong evidence of homophily.")
 
+    # Plot the graph with assigned colors
+    color_map = [G.nodes[node]['color'] for node in G.nodes()]
+    plt.figure(figsize=(8, 8))  # Set the figure size for better visibility
+    nx.draw(G, node_color=color_map, with_labels=True, node_size=500, font_size=10, edge_color=".5")
+    plt.title("Network Homophily")
+    plt.show()
+
     return G
 
 
@@ -216,9 +224,10 @@ def assign_balanced_signs(G, p):
     return G
 
 
-def validate_balanced_graph(G):
+def validate_plot_balanced_graph(G):
     """
     Validates whether the graph is structurally balanced based on the signs of the edges.
+    Plots the graph with '+' and '-' symbols on edges to indicate their signs.
 
     Parameters:
     G (networkx.Graph): The graph to validate.
@@ -226,9 +235,8 @@ def validate_balanced_graph(G):
     Returns:
     bool: True if the graph is balanced, False otherwise.
     """
-    SG = nx.Graph()
-    for u, v, data in G.edges(data=True):
-        SG.add_edge(u, v, sign=data['sign'])
+    # Make a copy of G to work with
+    SG = G.copy()
 
     # Initialize the SimulatedAnnealingSampler
     sampler = SimulatedAnnealingSampler()
@@ -237,6 +245,22 @@ def validate_balanced_graph(G):
     imbalance, _ = dnx.structural_imbalance(SG, sampler)
     is_balanced = len(imbalance) == 0
     print(f"The graph is {'balanced' if is_balanced else 'not balanced'}.")
+
+    # Prepare for plotting: convert numeric signs to symbolic for visualization
+    edge_labels = {(u, v): '+' if SG[u][v]['sign'] == 1 else '-' for u, v in SG.edges()}
+    edge_colors = ['green' if SG[u][v]['sign'] == 1 else 'red' for u, v in SG.edges()]
+
+    # Plot the graph
+    pos = nx.spring_layout(SG)  # Generate a layout for the nodes
+    plt.figure(figsize=(8, 8))  # Set the figure size for better visibility
+    nx.draw(SG, pos, node_color='lightblue', with_labels=True, node_size=500, font_size=10, edge_color=edge_colors)
+    
+    # Add edge labels ('+' or '-')
+    nx.draw_networkx_edge_labels(SG, pos, edge_labels=edge_labels)
+
+    plt.title("Structurally Balanced Graph" if is_balanced else "Structurally Unbalanced Graph")
+    plt.show()
+
     return is_balanced
 
 
@@ -386,10 +410,10 @@ def main():
             if attr_choice in ['A', 'B']:
                 p = get_probability_input("Enter the probability (0 to 1): ")
                 if attr_choice == 'A':
-                    G = assign_homophily(G, p)
+                    G = assign_plot_homophily(G, p)
                 elif attr_choice == 'B':
                     G = assign_balanced_signs(G, p)
-                    validate_balanced_graph(G)
+                    validate_plot_balanced_graph(G)
             else:
                 print("Invalid choice. Please enter 'A' or 'B'.")
 

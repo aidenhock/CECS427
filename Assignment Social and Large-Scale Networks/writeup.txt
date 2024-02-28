@@ -10,6 +10,8 @@ Next, I built the menu options to extend upon assignment 1 and accomadate assign
 After the menu was in working order I began to implement menu operations 3b, 4b, 5b, 5c, 6a,
 and finally 6b in that order. 
 
+*professors email helped me better understand the requirements which allowed me to graph option #6ab*
+
 
 --CHALLENGES 
 Using the dwave_networkx library was my biggest challenge, particularly with the structural_imbalance function.
@@ -18,6 +20,8 @@ Other challenges included input validation, error handling, and finding time to 
 
 I needed to submit twice in order to handle an edge case where all the nodes are assigned the same color
 in homophily.  
+
+*due to the email I needed to go back and graph the homophily and balanced graphs after computing*
 
 
 --ADDITIONAL FEATURES
@@ -29,3 +33,6 @@ desired confidence level. For now I just left it as a '.1'.
 I considered adding additional functionality to visualize the homophily in the plot function, but considering 
 it was not specified in the requirements I found it unnecessary to do so and just left it to return the 
 Assortativity coefficient for homophily.
+
+*due to the email I went back and fixed the functionality so that after assigning homophily or balance it was 
+graphed*
