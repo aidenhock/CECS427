@@ -1,0 +1,69 @@
+Purpose:
+
+This assignment aims to reinforce your comprehension of game theory by tasking you with developing a program. Your goal is to calculate the travel equilibrium and achieve social optimality in a directed network.
+
+Skills:
+
+The purpose of this assignment is to offer you a chance to hone the skills essential for success in this course, in your academic pursuits, within this field, and in your professional endeavors beyond academia. In particular, you will be refining your proficiency in game theory concepts within networks, crucial skills in the context of this assignment.
+
+Knowledge:
+
+Furthermore, this assignment will enhance your expertise with the NetworkX and Matplotlib libraries, as well as simulation programs.
+
+Task:
+Extend the program of assignments 1 and 2, with the following functionalities (each number is in the menu option): 
+Read a Graph: (Assignment 1)
+
+Read a Digraph: (Assignment 3)
+
+Param
+file_name:string
+
+The file has the following format
+source target a, b
+
+
+where a, b is the polynomial factor (a x + b)
+For example:    
+0 1 2 0 # source target (traversing time 2x)
+0 2 0 4 # source target (traversing time 4)
+1 2 0 0 # source target (traversing time 0)
+1 3 0 4 # source target (traversing time 4)
+2 3 2 0 # source target (traversing time 2x)
+Read a weighted directed graph from file_name. The weights represent the cost of traversing the link.
+
+Save the Graph: (Assignment 1 and 3)
+
+Check if the graph in memory is unidirectional (assignment 1) or directional (assignment 3) and save it accordingly
+
+Create a Graph: (Assignment 1, 2)  
+
+Random Erdos-Reny Graph (Assignment 1)
+Karate-Club Graph (Assignment 2)
+Algorithms: (Assignment 1, 2 and 3) 
+
+Shortest-Path: (Assignment 1)
+Partition G (Assignment 2)
+Travel Equilibrium and Social Optimality (Assignment 3)
+Param
+n: (int) number of drivers
+source: initial node
+destination: final node
+                           Find the Nash equilibrium and social optimal when n drivers move from source to destination and plot the graph with the values
+
+Plot G: (Assignments 1, 2)
+
+The Shortest Path (Assignment 1)
+Cluster Coefficients (Assignment 2)
+Neighborhood Overlaps (Assignment 2)
+Plot the Digraph (Assignment 3)
+   x: Exit
+
+Test your program with various parameters. The assignments are expected to be professionally implemented with no crashes. Handle all possible exceptions accordingly and provide clear comments and documentation for your code, explaining the logic and any important decisions.
+
+Submission Guidelines:
+
+Submit the Python file containing all the requirements.
+Include comments in your code explaining the logic and algorithms used.
+Include a brief report (in a separate text file) describing your approach, challenges faced, and any additional features implemented.
+By tackling these tasks, you'll build more practical programming skills related to graph manipulation in Python. This project aligns with the principles taught in class and encourages you to explore the NetworkX library for efficient graph handling.
