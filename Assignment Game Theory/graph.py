@@ -145,24 +145,19 @@ def partition_graph(G, num_components):
 
 def calculate_nash_equilibrium(G, n, source, destination):
     """
-    Calculates the Nash equilibrium for routing 'n' drivers from a 'source' node to a 'destination' node in a graph 'G'.
-    The Nash equilibrium is found when no single driver can decrease their travel cost by changing their path unilaterally.
-    This function iterates through all drivers, allowing them to switch paths if it benefits them, considering the 
-    impact of their choice on the congestion (and thus cost) of the paths, until no driver can reduce their cost, 
-    indicating that a Nash equilibrium has been reached.
+    Computes the Nash equilibrium where no driver benefits from changing their path in isolation. It iterates 
+    over drivers, letting them switch to beneficial paths, factoring in the resulting congestion, until no cost 
+    improvements are possible.
 
     Parameters:
-    G (networkx.DiGraph): The directed graph representing the network with nodes and edges. 
-    Edges must have weights assigned as a tuple (a, b) representing 
-    the polynomial travel cost 'a*x + b' where 'x' is the flow on the edge.
-    n (int): The total number of drivers to route from the 'source' to the 'destination'.
-    source (int): The starting node for all drivers in the graph.
-    destination (int): The end node where all drivers want to reach in the graph.
+    G (networkx.DiGraph): A directed graph with edge weights (a, b) for cost 'a*x + b' per edge flow 'x'.
+    n (int): Number of drivers from 'source' to 'destination'.
+    source (int): Start node.
+    destination (int): End node.
 
     Returns:
-    total_nash_cost (float): The total travel cost at the Nash equilibrium for all drivers combined.
-    driver_counts (dict): A dictionary where the keys are tuples representing the edges of the graph and the values are 
-                          the number of drivers on that edge at the Nash equilibrium.
+    total_nash_cost (float): Total travel cost at Nash equilibrium.
+    driver_counts (dict): Edge-wise driver distribution at equilibrium.
     """
     # Function to calculate the cost for an edge given the number of drivers
     def edge_cost(u, v, drivers):
